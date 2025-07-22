@@ -1,7 +1,6 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 export default function Home() {
   type Product = {
@@ -10,30 +9,31 @@ export default function Home() {
     image?: string;
   };
 
-  const [products, setProducts] = useState<Product[]>([
+  // ✅ Hardcoded hoodie products for demo
+  const [products] = useState<Product[]>([
     {
       name: 'Grey Classic Hoodie',
       price: 1299,
-      image: 'https://sportscentral.ph/cdn/shop/files/IN5089_2_APPAREL_Photography_FrontCenterView_grey_1080x.jpg',
+      image: 'https://i.pinimg.com/564x/22/41/f2/2241f244fb9e03d2431690ac7d8d8472.jpg',
     },
     {
       name: 'Premium Black Hoodie',
       price: 1499,
-      image: 'https://sportscentral.ph/cdn/shop/files/IN5089_2_APPAREL_Photography_FrontCenterView_grey_1080x.jpg',
+      image: 'https://cdn.shopify.com/s/files/1/0458/4836/3030/files/01-GSDHoodie_PDP.png?v=1712695659',
     },
     {
       name: 'Stylish Beige Hoodie',
       price: 1399,
-      image: 'https://sportscentral.ph/cdn/shop/files/IN5089_2_APPAREL_Photography_FrontCenterView_grey_1080x.jpg',
+      image: 'https://i.pinimg.com/736x/e8/68/62/e868623ad4b839bd346e593a1e27f1c3.jpg',
     },
   ]);
-  const [hero, setHero] = useState({ tagline: '', background: '' });
 
-  useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem('hoodieData') || '{}');
-    setProducts(stored.products || []);
-    setHero(stored.hero || { tagline: '', background: '' });
-  }, []);
+  // ✅ Hardcoded hero section (optional)
+  const hero = {
+    tagline: 'Limited Edition Hoodies. Drop Yours Today.',
+    background:
+      'https://images.unsplash.com/photo-1602810319226-01e7fd03b9fd?auto=format&fit=crop&w=1400&q=80',
+  };
 
   return (
     <main>
@@ -41,16 +41,13 @@ export default function Home() {
       <section
         className="relative min-h-[80vh] flex items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage: hero.background
-            ? `url(${hero.background})`
-            : 'url(/default-hero.jpg)',
+          backgroundImage: `url(${hero.background})`,
         }}
       >
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 text-center px-6 max-w-3xl text-white">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-md">
-            {hero.tagline ||
-              'Premium Comfort. Minimal Aesthetic. Limited Drops.'}
+            {hero.tagline}
           </h1>
           <a
             href="#products"
@@ -62,10 +59,7 @@ export default function Home() {
       </section>
 
       {/* Product Section */}
-      <section
-        id="products"
-        className="py-20 px-4 max-w-7xl mx-auto bg-gray-50"
-      >
+      <section id="products" className="py-20 px-4 max-w-7xl mx-auto bg-gray-50">
         <h2 className="text-4xl font-bold text-center mb-14">Our Hoodies</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -75,15 +69,12 @@ export default function Home() {
               whileHover={{ scale: 1.02 }}
               className="flex flex-col overflow-hidden bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
             >
-              {/* Product Image */}
-              <div className="w-full aspect-[4/3] relative">
+              <div className="w-full aspect-[4/3]">
                 {p.image ? (
-                  <Image
+                  <img
                     src={p.image}
                     alt={p.name}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-t-2xl"
+                    className="w-full h-full object-cover"
                   />
                 ) : (
                   <div className="w-full h-full bg-gray-100 flex items-center justify-center text-gray-400">
@@ -92,7 +83,6 @@ export default function Home() {
                 )}
               </div>
 
-              {/* Order Now */}
               <div className="flex justify-center mt-4 px-6">
                 <div className="bg-black text-white px-6 py-3 rounded-xl shadow-lg text-center w-full">
                   <a
@@ -104,14 +94,9 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Info */}
               <div className="flex flex-col items-center text-center px-6 py-4 space-y-2">
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {p.name}
-                </h3>
-                <p className="text-base font-medium text-gray-700">
-                  ₹{p.price}
-                </p>
+                <h3 className="text-lg font-semibold text-gray-900">{p.name}</h3>
+                <p className="text-base font-medium text-gray-700">₹{p.price}</p>
               </div>
             </motion.div>
           ))}
