@@ -25,11 +25,11 @@ export default function Home() {
       name: 'Stylish Beige Hoodie',
       price: 1399,
       image: 'https://i.pinimg.com/1200x/46/92/f8/4692f8f74c00a5348975dde49de02e36.jpg',
-    }
+    },
 
-     {} name: 'Steep AJ Hoodie',
+     { name: 'Steep AJ Hoodie',
       price: 1599,
-      image: 'https://i.pinimg.com/1200x/c8/b7/c8/c8b7c852a6fabb8dc13781438cd29850.jpg',}
+      image: 'https://i.pinimg.com/1200x/c8/b7/c8/c8b7c852a6fabb8dc13781438cd29850.jpg',},
 
       {name: 'Nike Hoodie',
       price: 2399,
