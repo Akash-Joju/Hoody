@@ -2,7 +2,14 @@
 import { useState, useEffect } from 'react';
 
 export default function AdminPage() {
-  const [products, setProducts] = useState([]);
+  type Product = {
+  name: string;
+  price: number;
+  image?: string;
+};
+
+const [products, setProducts] = useState<Product[]>([]);
+
   const [hero, setHero] = useState({ tagline: '', background: '' });
 
   useEffect(() => {

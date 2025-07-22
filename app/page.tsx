@@ -3,7 +3,14 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function Home() {
-  const [products, setProducts] = useState([]);
+  type Product = {
+  name: string;
+  price: number;
+  image?: string;
+};
+
+const [products, setProducts] = useState<Product[]>([]);
+
   const [hero, setHero] = useState({ tagline: '', background: '' });
 
   useEffect(() => {
