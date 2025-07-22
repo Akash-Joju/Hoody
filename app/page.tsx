@@ -24,7 +24,7 @@ export default function Home() {
     {
       name: 'Stylish Beige Hoodie',
       price: 1399,
-      image: 'https://i.pinimg.com/736x/e8/68/62/e868623ad4b839bd346e593a1e27f1c3.jpg',
+      image: 'https://i.pinimg.com/736x/27/6e/68/276e687888380a3b5770fc0fb7b1e5bc.jpg',
     },
   ]);
 
