@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function Home() {
@@ -9,15 +9,14 @@ export default function Home() {
     image?: string;
   };
 
-  // ✅ Hardcoded hoodie products for demo
-  const [products] = useState<Product[]>([
+  const defaultProducts: Product[] = [
     {
       name: 'Classic Hoodie',
       price: 1299,
       image: 'https://i.pinimg.com/736x/82/d4/d4/82d4d4a14abfd08114d60400738b23bd.jpg',
     },
     {
-      name: 'Premium  Hoodie',
+      name: 'Premium Hoodie',
       price: 1499,
       image: 'https://i.pinimg.com/1200x/6a/bf/1e/6abf1e076f5c0a887cce55d67c0196af.jpg',
     },
@@ -26,23 +25,37 @@ export default function Home() {
       price: 1399,
       image: 'https://i.pinimg.com/1200x/b5/81/cb/b581cb893bd4d85dd3729702516adcbc.jpg',
     },
-
-     { name: 'Steep AJ Hoodie',
+    {
+      name: 'Steep AJ Hoodie',
       price: 1599,
-      image: 'https://i.pinimg.com/1200x/3b/0c/4e/3b0c4e4faf56c7e478ea6691dea29d27.jpg',},
-
-      {name: 'Nikton Hoodie',
+      image: 'https://i.pinimg.com/1200x/3b/0c/4e/3b0c4e4faf56c7e478ea6691dea29d27.jpg',
+    },
+    {
+      name: 'Nikton Hoodie',
       price: 2399,
       image: 'https://i.pinimg.com/1200x/c7/f0/69/c7f069ba8881f8bd6c4771c8dda6d6ec.jpg',
     },
-  ]);
+  ];
 
-  // ✅ Hardcoded hero section (optional)
-  const hero = {
+  const defaultHero = {
     tagline: 'Limited Edition Hoodies. Drop Yours Today.',
     background:
       'https://i.pinimg.com/1200x/62/32/06/6232061577e1bc074fa0aafa6550d924.jpg',
   };
+
+  const [products, setProducts] = useState<Product[]>([]);
+  const [hero, setHero] = useState(defaultHero);
+
+  useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem('hoodieData') || '{}');
+    const extra = stored.products || [];
+
+    setProducts([...defaultProducts, ...extra]);
+    setHero({
+      tagline: stored.hero?.tagline || defaultHero.tagline,
+      background: stored.hero?.background || defaultHero.background,
+    });
+  }, []);
 
   return (
     <main>
@@ -70,7 +83,6 @@ export default function Home() {
       {/* Product Section */}
       <section id="products" className="py-20 px-4 max-w-7xl mx-auto bg-gray-50">
         <h2 className="text-4xl font-bold text-center mb-14">Our Hoodies</h2>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {products.map((p, idx) => (
             <motion.div
