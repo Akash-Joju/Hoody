@@ -9,23 +9,7 @@ export default function AdminPage() {
     description?: string;
   };
 
-  const [products, setProducts] = useState<Product[]>([
-    {
-      name: 'Grey Classic Hoodie',
-      price: 1299,
-      image: 'https://sportscentral.ph/cdn/shop/files/IN5089_2_APPAREL_Photography_FrontCenterView_grey_1080x.jpg',
-    },
-    {
-      name: 'Premium Black Hoodie',
-      price: 1499,
-      image: 'https://sportscentral.ph/cdn/shop/files/IN5089_2_APPAREL_Photography_FrontCenterView_grey_1080x.jpg',
-    },
-    {
-      name: 'Stylish Beige Hoodie',
-      price: 1399,
-      image: 'https://sportscentral.ph/cdn/shop/files/IN5089_2_APPAREL_Photography_FrontCenterView_grey_1080x.jpg',
-    },
-  ]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [hero, setHero] = useState({ tagline: '', background: '' });
 
   useEffect(() => {
