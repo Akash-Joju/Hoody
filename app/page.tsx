@@ -15,47 +15,42 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      
+      <section
+        className="relative min-h-[80vh] flex items-center justify-center bg-cover bg-center"
+        style={{
+          backgroundImage: hero.background
+            ? `url(${hero.background})`
+            : 'url(/default-hero.jpg)',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 text-center px-6 max-w-3xl text-white">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-md">
+            {hero.tagline ||
+              'Premium Comfort. Minimal Aesthetic. Limited Drops.'}
+          </h1>
+          <a
+            href="#products"
+            className="inline-block bg-white text-black px-6 py-3 text-lg font-semibold rounded-full shadow hover:bg-gray-200 transition"
+          >
+            🛍️ Shop Now
+          </a>
+        </div>
+      </section>
 
-     <section
-  className="relative min-h-[80vh] flex items-center justify-center bg-cover bg-center"
-  style={{
-    backgroundImage: hero.background ? `url(${hero.background})` : 'url(/default-hero.jpg)',
-  }}
->
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/60" />
+      {/* Products */}
+      <section id="products" className="py-16 px-4 max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-10">Our Hoodies</h2>
 
-  {/* Content */}
-  <div className="relative z-10 text-center px-6 max-w-3xl text-white">
-    <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-md">
-      {hero.tagline || 'Premium Comfort. Minimal Aesthetic. Limited Drops.'}
-    </h1>
-
-    <a
-      href="#products"
-      className="inline-block bg-white text-black px-6 py-3 text-lg font-semibold rounded-full shadow hover:bg-gray-200 transition"
-    >
-      🛍️ Shop Now
-    </a>
-  </div>
-</section>
-
-
-
-      {/* Product Section */}
-      <section id="products" className="py-20 px-4 max-w-7xl mx-auto bg-gray-50">
-        <h2 className="text-4xl font-bold text-center mb-14">Our Hoodies</h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((p: any, idx: number) => (
             <motion.div
               key={idx}
-              whileHover={{ scale: 1.02 }}
-              className="flex flex-col overflow-hidden bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.03 }}
+              className="bg-white rounded-xl border shadow hover:shadow-lg transition overflow-hidden"
             >
               {/* Product Image */}
-              <div className="w-full aspect-[4/3]">
+              <div className="relative w-full aspect-[4/3] overflow-hidden">
                 {p.image ? (
                   <img
                     src={p.image}
@@ -69,22 +64,16 @@ export default function Home() {
                 )}
               </div>
 
-              {/* Order Now Button in visible black box */}
-              <div className="flex justify-center mt-4 px-6">
-                <div className="bg-black text-white px-6 py-3 rounded-xl shadow-lg text-center w-full">
-                  <a
-                    href={`https://wa.me/?text=I want to order: ${p.name}`}
-                    className="font-semibold text-base block hover:text-gray-300 transition"
-                  >
-                    🛒 Order Now
-                  </a>
-                </div>
-              </div>
-
-              {/* Product Info */}
-              <div className="flex flex-col items-center text-center px-6 py-4 space-y-2">
-                <h3 className="text-lg font-semibold text-gray-900">{p.name}</h3>
-                <p className="text-base font-medium text-gray-700">₹{p.price}</p>
+              {/* Product Content */}
+              <div className="p-5 text-center space-y-2">
+                <h3 className="text-xl font-bold">{p.name}</h3>
+                <p className="text-gray-600">₹{p.price}</p>
+                <a
+                  href={`https://wa.me/?text=I want to order: ${p.name}`}
+                  className="inline-block mt-2 bg-black text-white px-5 py-2 rounded-full font-semibold hover:bg-gray-800 transition"
+                >
+                  🛒 Order Now
+                </a>
               </div>
             </motion.div>
           ))}
@@ -92,10 +81,13 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black text-white py-6 text-center mt-10">
+      <footer className="bg-black text-white py-6 text-center">
         <p>
           Follow us on{' '}
-          <a href="https://instagram.com/yourbrand" className="underline">
+          <a
+            href="https://instagram.com/yourbrand"
+            className="underline hover:text-gray-300"
+          >
             Instagram
           </a>
         </p>
