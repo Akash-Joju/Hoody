@@ -14,7 +14,7 @@ export default function Home() {
     {
       name: 'Grey Classic Hoodie',
       price: 1299,
-      image: 'https://i.pinimg.com/564x/22/41/f2/2241f244fb9e03d2431690ac7d8d8472.jpg',
+      image: 'https://i.pinimg.com/1200x/72/e4/49/72e44993a6ce9b234da57b7d21e8f92e.jpg',
     },
     {
       name: 'Premium Black Hoodie',
@@ -24,7 +24,7 @@ export default function Home() {
     {
       name: 'Stylish Beige Hoodie',
       price: 1399,
-      image: 'https://i.pinimg.com/736x/27/6e/68/276e687888380a3b5770fc0fb7b1e5bc.jpg',
+      image: 'https://i.pinimg.com/1200x/25/ee/62/25ee62d0ce01c72a7dc8a5038b5b84ed.jpg',
     },
   ]);
 
