@@ -10,7 +10,7 @@ const nextConfig = {
       'lh3.googleusercontent.com',
       'images.pexels.com',
       'i.ibb.co',
-      'firebasestorage.googleapis.com'],
+      'firebasestorage.googleapis.com','i.pinimg.com'],
   },
 };
 
