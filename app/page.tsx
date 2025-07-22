@@ -14,26 +14,26 @@ export default function Home() {
     {
       name: 'Classic Hoodie',
       price: 1299,
-      image: 'https://i.pinimg.com/1200x/fd/c4/4b/fdc44b0870544fa4a1c137522a74b638.jpg',
+      image: 'https://i.pinimg.com/1200x/95/52/6e/95526e8038ca705c02c2ff32c04fc524.jpg',
     },
     {
       name: 'Premium  Hoodie',
       price: 1499,
-      image: 'https://i.pinimg.com/1200x/c8/95/9e/c8959ef995075d63b4cff1300aa0d240.jpg',
+      image: 'https://i.pinimg.com/1200x/ad/43/7a/ad437a4cc15884057a622b9e38a46e5f.jpg',
     },
     {
       name: 'Stylish Beige Hoodie',
       price: 1399,
-      image: 'https://i.pinimg.com/1200x/46/92/f8/4692f8f74c00a5348975dde49de02e36.jpg',
+      image: 'https://i.pinimg.com/1200x/c5/3b/21/c53b21cb78f31c2734933259e21949da.jpg',
     },
 
      { name: 'Steep AJ Hoodie',
       price: 1599,
-      image: 'https://i.pinimg.com/1200x/c8/b7/c8/c8b7c852a6fabb8dc13781438cd29850.jpg',},
+      image: 'https://i.pinimg.com/1200x/6f/54/04/6f5404972b5995e34230a63837e85490.jpg',},
 
-      {name: 'Nike Hoodie',
+      {name: 'Nikton Hoodie',
       price: 2399,
-      image: 'https://i.pinimg.com/1200x/71/16/50/711650ce2b2162f42845fa66445d0961.jpg',
+      image: 'https://i.pinimg.com/1200x/3a/15/15/3a1515848d12f59837f7af45bd011d3a.jpg',
     },
   ]);
 
