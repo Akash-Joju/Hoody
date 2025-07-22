@@ -14,12 +14,12 @@ export default function Home() {
     {
       name: 'Classic Hoodie',
       price: 1299,
-      image: 'https://i.pinimg.com/1200x/72/e4/49/72e44993a6ce9b234da57b7d21e8f92e.jpg',
+      image: 'https://i.pinimg.com/1200x/fd/c4/4b/fdc44b0870544fa4a1c137522a74b638.jpg',
     },
     {
       name: 'Premium  Hoodie',
       price: 1499,
-      image: 'https://i.pinimg.com/1200x/cc/04/cc/cc04cc11e978f08f178e505cc7c47275.jpg',
+      image: 'https://i.pinimg.com/1200x/c8/95/9e/c8959ef995075d63b4cff1300aa0d240.jpg',
     },
     {
       name: 'Stylish Beige Hoodie',
