@@ -12,19 +12,27 @@ export default function Home() {
   // ✅ Hardcoded hoodie products for demo
   const [products] = useState<Product[]>([
     {
-      name: 'Grey Classic Hoodie',
+      name: 'Classic Hoodie',
       price: 1299,
       image: 'https://i.pinimg.com/1200x/72/e4/49/72e44993a6ce9b234da57b7d21e8f92e.jpg',
     },
     {
-      name: 'Premium Black Hoodie',
+      name: 'Premium  Hoodie',
       price: 1499,
-      image: 'https://cdn.shopify.com/s/files/1/0458/4836/3030/files/01-GSDHoodie_PDP.png?v=1712695659',
+      image: 'https://i.pinimg.com/1200x/cc/04/cc/cc04cc11e978f08f178e505cc7c47275.jpg',
     },
     {
       name: 'Stylish Beige Hoodie',
       price: 1399,
-      image: 'https://i.pinimg.com/1200x/25/ee/62/25ee62d0ce01c72a7dc8a5038b5b84ed.jpg',
+      image: 'https://i.pinimg.com/1200x/46/92/f8/4692f8f74c00a5348975dde49de02e36.jpg',
+
+      name: 'Steep AJ Hoodie',
+      price: 1599,
+      image: 'https://i.pinimg.com/1200x/c8/b7/c8/c8b7c852a6fabb8dc13781438cd29850.jpg',
+
+      name: 'Nike Hoodie',
+      price: 2399,
+      image: 'https://i.pinimg.com/1200x/71/16/50/711650ce2b2162f42845fa66445d0961.jpg',
     },
   ]);
 
@@ -32,7 +40,7 @@ export default function Home() {
   const hero = {
     tagline: 'Limited Edition Hoodies. Drop Yours Today.',
     background:
-      'https://images.unsplash.com/photo-1602810319226-01e7fd03b9fd?auto=format&fit=crop&w=1400&q=80',
+      'https://i.pinimg.com/1200x/62/32/06/6232061577e1bc074fa0aafa6550d924.jpg',
   };
 
   return (
