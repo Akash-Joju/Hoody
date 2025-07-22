@@ -13,17 +13,17 @@ export default function AdminPage() {
     {
       name: 'Grey Classic Hoodie',
       price: 1299,
-      image: 'https://i.pinimg.com/564x/22/41/f2/2241f244fb9e03d2431690ac7d8d8472.jpg',
+      image: 'https://sportscentral.ph/cdn/shop/files/IN5089_2_APPAREL_Photography_FrontCenterView_grey_1080x.jpg',
     },
     {
       name: 'Premium Black Hoodie',
       price: 1499,
-      image: 'https://cdn.shopify.com/s/files/1/0458/4836/3030/files/01-GSDHoodie_PDP.png?v=1712695659',
+      image: 'https://sportscentral.ph/cdn/shop/files/IN5089_2_APPAREL_Photography_FrontCenterView_grey_1080x.jpg',
     },
     {
       name: 'Stylish Beige Hoodie',
       price: 1399,
-      image: 'https://i.pinimg.com/736x/e8/68/62/e868623ad4b839bd346e593a1e27f1c3.jpg',
+      image: 'https://sportscentral.ph/cdn/shop/files/IN5089_2_APPAREL_Photography_FrontCenterView_grey_1080x.jpg',
     },
   ]);
   const [hero, setHero] = useState({ tagline: '', background: '' });
