@@ -6,6 +6,8 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { CustomArrowProps } from 'react-slick';
+
 
 export default function Home() {
   type Product = { name: string; price: number; image?: string };
@@ -57,13 +59,13 @@ export default function Home() {
 
   const isVideo = hero.background.endsWith('.mp4');
 
-  const PrevArrow = ({ onClick }: any) => (
+  const PrevArrow = ({ onClick }: CustomArrowProps) => (
     <button onClick={onClick} className="absolute left-2 top-1/2 z-10 -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-200">
       <FaChevronLeft />
     </button>
   );
 
-  const NextArrow = ({ onClick }: any) => (
+  const NextArrow = ({ onClick }: CustomArrowProps) => (
     <button onClick={onClick} className="absolute right-2 top-1/2 z-10 -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-200">
       <FaChevronRight />
     </button>
